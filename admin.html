@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meer Dada | Admin Console & Horology Dashboard</title>
+
+  <!-- Google Fonts: Cinzel & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Brand Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body style="background: #08090d;">
+
+  <div class="admin-layout">
+    <!-- ====================================================================
+         Admin Sidebar Navigation
+         ==================================================================== -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand-header">
+        <svg class="brand-icon-crown" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+        </svg>
+        <div>
+          <div class="admin-brand-title">MEER DADA</div>
+          <div class="admin-brand-sub">Admin Console</div>
+        </div>
+      </div>
+
+      <ul class="admin-nav-menu">
+        <li class="admin-nav-item">
+          <button class="active" data-target="section-orders">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span>Orders Management</span>
+          </button>
+        </li>
+        <li class="admin-nav-item">
+          <button data-target="section-products">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>Timepiece Catalog</span>
+          </button>
+        </li>
+        <li class="admin-nav-item">
+          <button data-target="section-analytics">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+            <span>Sales & Analytics</span>
+          </button>
+        </li>
+      </ul>
+
+      <div class="admin-sidebar-footer">
+        <a href="index.html" class="btn btn-gold-outline btn-sm btn-block">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          <span>View Storefront</span>
+        </a>
+
+        <button id="btnResetDemoData" class="btn btn-sm btn-block" style="background:rgba(255,255,255,0.04); color:var(--text-dim); border:1px solid var(--border-subtle);">
+          <span>Reset Demo Data</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ====================================================================
+         Main Admin Content
+         ==================================================================== -->
+    <main class="admin-main">
+      <!-- Top Bar -->
+      <header class="admin-topbar">
+        <div class="admin-topbar-title">
+          <h1>Horology Operations Portal</h1>
+          <p>Real-time order fulfillment & catalogue management for Meer Dada</p>
+        </div>
+
+        <div class="admin-topbar-actions">
+          <button class="btn btn-gold-primary btn-sm" onclick="openAddProductModal()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            <span>+ Add Timepiece</span>
+          </button>
+
+          <a href="index.html" class="icon-btn" title="Go to Website">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <div class="admin-content-body">
+        <!-- 4 Key Performance Metrics -->
+        <section class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-title">Gross Revenue</span>
+              <div class="metric-icon-box">💰</div>
+            </div>
+            <div class="metric-value" id="metricRevenue">₨ 0</div>
+            <div class="metric-caption positive">
+              <span>↑ Live order revenue</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-title">Acquisitions</span>
+              <div class="metric-icon-box">📦</div>
+            </div>
+            <div class="metric-value" id="metricOrders">0</div>
+            <div class="metric-caption">
+              <span>Orders registered in system</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-title">Master Timepieces</span>
+              <div class="metric-icon-box">⌚</div>
+            </div>
+            <div class="metric-value" id="metricProducts">0</div>
+            <div class="metric-caption">
+              <span>Live in store catalog</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-title">Low Stock Alert</span>
+              <div class="metric-icon-box">⚠️</div>
+            </div>
+            <div class="metric-value" id="metricLowStock" style="color:var(--warning)">0</div>
+            <div class="metric-caption">
+              <span>Items with &le; 6 units left</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             View 1: Orders Management Section
+             ================================================================ -->
+        <section class="admin-view-section admin-card-section" id="section-orders">
+          <div class="section-top-row">
+            <div>
+              <h2 style="font-family:var(--font-serif); font-size:1.4rem; color:#fff;">Client Order Dossiers</h2>
+              <p style="font-size:0.82rem; color:var(--text-dim);">Live acquisitions placed through the Meer Dada storefront</p>
+            </div>
+
+            <div class="table-toolbar">
+              <div class="search-input-wrap">
+                <input type="text" id="orderSearchInput" class="search-input" placeholder="Search by Order ID or Client..." oninput="renderOrdersTable()">
+              </div>
+
+              <div style="display:flex; gap:0.4rem;">
+                <button class="status-tab-btn active" onclick="filterOrdersByStatus('All', this)">All</button>
+                <button class="status-tab-btn" onclick="filterOrdersByStatus('Pending', this)">Pending</button>
+                <button class="status-tab-btn" onclick="filterOrdersByStatus('Processing', this)">Processing</button>
+                <button class="status-tab-btn" onclick="filterOrdersByStatus('Dispatched', this)">Dispatched</button>
+                <button class="status-tab-btn" onclick="filterOrdersByStatus('Delivered', this)">Delivered</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="luxury-admin-table">
+              <thead>
+                <tr>
+                  <th>Order Reference</th>
+                  <th>Client & City</th>
+                  <th>Timepieces</th>
+                  <th>Total Amount</th>
+                  <th>Date & Time</th>
+                  <th>Fulfillment Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTableBody">
+                <!-- Dynamically populated via js/admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             View 2: Product Inventory Management Section
+             ================================================================ -->
+        <section class="admin-view-section admin-card-section" id="section-products" style="display:none;">
+          <div class="section-top-row">
+            <div>
+              <h2 style="font-family:var(--font-serif); font-size:1.4rem; color:#fff;">Timepiece Inventory</h2>
+              <p style="font-size:0.82rem; color:var(--text-dim);">Manage models, calibres, pricing, and stock levels</p>
+            </div>
+
+            <div class="table-toolbar">
+              <div class="search-input-wrap">
+                <input type="text" id="productSearchInput" class="search-input" placeholder="Search catalog..." oninput="renderProductsTable()">
+              </div>
+
+              <button class="btn btn-gold-primary btn-sm" onclick="openAddProductModal()">
+                <span>+ Add Timepiece</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="luxury-admin-table">
+              <thead>
+                <tr>
+                  <th>Timepiece Model</th>
+                  <th>Category</th>
+                  <th>Price (PKR)</th>
+                  <th>Inventory Stock</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="productsTableBody">
+                <!-- Dynamically populated via js/admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             View 3: Analytics & Category Distribution
+             ================================================================ -->
+        <section class="admin-view-section admin-card-section" id="section-analytics" style="display:none;">
+          <div class="section-top-row">
+            <div>
+              <h2 style="font-family:var(--font-serif); font-size:1.4rem; color:#fff;">Horology Category Analytics</h2>
+              <p style="font-size:0.82rem; color:var(--text-dim);">Catalog distribution across horological complications</p>
+            </div>
+          </div>
+
+          <div class="category-stats-list" id="categoryAnalyticsList">
+            <!-- Dynamically populated via js/admin.js -->
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- ====================================================================
+       Admin Modals: Add / Edit Product & Order Dossier
+       ==================================================================== -->
+  <div class="modal-backdrop" id="adminModalBackdrop"></div>
+
+  <!-- 1. Add / Edit Product Modal -->
+  <div class="modal-window" id="productModal" style="max-width: 820px;">
+    <button class="modal-close-btn admin-modal-close">&times;</button>
+    <div style="padding: 2.2rem;">
+      <h2 id="productModalTitle" style="font-family:var(--font-serif); font-size:1.6rem; color:#fff; margin-bottom:1.5rem; border-bottom:1px solid var(--border-subtle); padding-bottom:0.8rem;">
+        Craft New Timepiece
+      </h2>
+
+      <form id="productForm">
+        <div class="form-group-grid">
+          <div class="form-field">
+            <label for="prodName">Timepiece Model Name *</label>
+            <input type="text" id="prodName" required placeholder="e.g. Meer Dada Imperium Tourbillon">
+          </div>
+          <div class="form-field">
+            <label for="prodSubtitle">Calibre / Subtitle *</label>
+            <input type="text" id="prodSubtitle" required placeholder="e.g. In-House Automatic Calibre MD-801">
+          </div>
+        </div>
+
+        <div class="form-group-grid">
+          <div class="form-field">
+            <label for="prodCategory">Complication / Category *</label>
+            <select id="prodCategory" required>
+              <option value="Tourbillon">Tourbillon</option>
+              <option value="Chronograph">Chronograph</option>
+              <option value="Skeleton">Skeleton</option>
+              <option value="Diver">Diver 300M</option>
+              <option value="Classic Dress">Classic Dress</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="prodBadge">Distinction Badge</label>
+            <input type="text" id="prodBadge" placeholder="e.g. Limited Edition, Masterpiece, Bestseller">
+          </div>
+        </div>
+
+        <div class="form-group-grid">
+          <div class="form-field">
+            <label for="prodPrice">Price in PKR (₨) *</label>
+            <input type="number" id="prodPrice" required placeholder="e.g. 280000">
+          </div>
+          <div class="form-field">
+            <label for="prodOldPrice">Original / Retail Price (PKR)</label>
+            <input type="number" id="prodOldPrice" placeholder="e.g. 330000">
+          </div>
+        </div>
+
+        <div class="form-group-grid">
+          <div class="form-field">
+            <label for="prodStock">Stock Units In Vault *</label>
+            <input type="number" id="prodStock" required value="10" min="1">
+          </div>
+          <div class="form-field">
+            <label for="prodImage">Image URL *</label>
+            <input type="url" id="prodImage" required placeholder="https://images.unsplash.com/...">
+          </div>
+        </div>
+
+        <!-- Live Image Preview Box -->
+        <div style="margin-bottom:1.2rem; display:flex; align-items:center; gap:1.2rem; background:rgba(0,0,0,0.3); padding:0.8rem 1.2rem; border-radius:10px; border:1px solid var(--border-subtle);">
+          <img id="productImagePreview" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=900&auto=format&fit=crop" alt="Preview" style="width:60px; height:60px; object-fit:cover; border-radius:8px; border:1px solid var(--gold-border);">
+          <small style="color:var(--text-dim);">Live photography preview. High resolution watch photos are automatically scaled.</small>
+        </div>
+
+        <!-- Horological Specifications Grid -->
+        <h4 style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold-light); margin:1.2rem 0 0.8rem 0;">
+          Horological Specifications
+        </h4>
+        <div class="form-group-grid">
+          <div class="form-field">
+            <label for="prodMovement">Movement Calibre</label>
+            <input type="text" id="prodMovement" placeholder="e.g. In-House Calibre MD-801, 28,800 vph">
+          </div>
+          <div class="form-field">
+            <label for="prodCase">Case Material & Diameter</label>
+            <input type="text" id="prodCase" placeholder="e.g. 42mm 18K Rose Gold with Sapphire Caseback">
+          </div>
+        </div>
+
+        <div class="form-group-grid">
+          <div class="form-field">
+            <label for="prodGlass">Crystal Glass</label>
+            <input type="text" id="prodGlass" placeholder="e.g. Double-Curved Sapphire with AR Coating">
+          </div>
+          <div class="form-field">
+            <label for="prodWater">Water Resistance</label>
+            <input type="text" id="prodWater" placeholder="e.g. 100M (10 ATM)">
+          </div>
+        </div>
+
+        <div class="form-group-grid">
+          <div class="form-field">
+            <label for="prodReserve">Power Reserve</label>
+            <input type="text" id="prodReserve" placeholder="e.g. 72 Hours">
+          </div>
+          <div class="form-field">
+            <label for="prodStrap">Strap & Buckle</label>
+            <input type="text" id="prodStrap" placeholder="e.g. Hand-Stitched Louisiana Alligator">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="prodDesc">Masterpiece Description</label>
+          <textarea id="prodDesc" rows="3" placeholder="Artisanal description of this horological masterpiece..."></textarea>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; gap:1rem; margin-top:1.5rem;">
+          <button type="button" class="btn btn-gold-outline admin-modal-close">Cancel</button>
+          <button type="submit" class="btn btn-gold-primary">Save to Catalog</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. Order Details Dossier Modal -->
+  <div class="modal-window" id="orderDetailModal">
+    <button class="modal-close-btn admin-modal-close">&times;</button>
+    <div id="orderDetailModalBody">
+      <!-- Populated via js/admin.js -->
+    </div>
+  </div>
+
+  <!-- JavaScript Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

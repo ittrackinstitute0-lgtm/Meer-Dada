@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meer Dada | Haute Horlogerie & Luxury Timepieces</title>
+  
+  <!-- Google Fonts: Cinzel (Luxury Serif) & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Brand Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       Site Navigation Bar
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="Meer Dada Home">
+        <svg class="brand-icon-crown" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-name">MEER DADA</span>
+          <span class="brand-tagline">Haute Horlogerie</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#catalog" class="nav-link">Catalog</a>
+        <a href="#heritage" class="nav-link">Heritage</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#concierge" class="nav-link">VIP Concierge</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Direct Admin Portal Link -->
+        <a href="admin.html" class="admin-portal-link" title="Open Admin Control Panel">
+          <span class="status-indicator-dot"></span>
+          <span>Admin Panel</span>
+        </a>
+
+        <!-- Cart Button -->
+        <button class="icon-btn" id="cartToggleBtn" aria-label="Open Shopping Box" title="Your Private Box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="badge-count" id="cartCountBadge" style="display: none;">0</span>
+        </button>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       Hero Section
+       ======================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-text-block">
+        <div class="hero-subheading">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          <span>Exclusive Geneva & Pakistan Craftsmanship</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span>THE ESSENCE OF</span>
+          <span class="gold-text">TIMELESS LUXURY</span>
+        </h1>
+
+        <p class="hero-description">
+          Welcome to Meer Dada Haute Horlogerie. Hand-assembled mechanical timepieces blending centuries of horological heritage with uncompromising modern engineering.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#catalog" class="btn btn-gold-primary btn-lg btn-magnetic">
+            <span>Explore Collection</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+
+          <a href="#heritage" class="btn btn-gold-outline btn-lg">
+            <span>Our Heritage</span>
+          </a>
+        </div>
+
+        <div class="hero-stats-row">
+          <div class="stat-item">
+            <h4>100%</h4>
+            <p>Mechanical Precision</p>
+          </div>
+          <div class="stat-item">
+            <h4>5 YR</h4>
+            <p>Global Warranty</p>
+          </div>
+          <div class="stat-item">
+            <h4>300M</h4>
+            <p>Water Resistance</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Showcase -->
+      <div class="hero-visual-card">
+        <!-- Floating Spec Pills -->
+        <div class="floating-spec-pill spec-pill-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span>Flying Tourbillon MD-801</span>
+        </div>
+
+        <div class="floating-spec-pill spec-pill-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          <span>18K Rose Gold Finish</span>
+        </div>
+
+        <div class="watch-hero-showcase">
+          <div class="watch-glow-disc"></div>
+          
+          <div class="watch-hero-img-wrap">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=900&auto=format&fit=crop" 
+                 alt="Meer Dada Imperium Tourbillon" 
+                 class="watch-hero-img">
+          </div>
+
+          <div class="watch-hero-info">
+            <div>
+              <h3 class="watch-hero-name">Imperium Tourbillon</h3>
+              <span class="watch-hero-calibre">Calibre MD-801 Automatic</span>
+            </div>
+            <div class="watch-hero-price">₨ 320,000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Brand Pillars & Horological Standards
+       ======================================================================== -->
+  <section class="pillars-section">
+    <div class="container">
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon-box">⚙️</div>
+          <h3 class="pillar-title">In-House Calibres</h3>
+          <p class="pillar-text">Every balance wheel and escapement is hand-regulated to chronometer standards for unmatched accuracy.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">💎</div>
+          <h3 class="pillar-title">Sapphire Crystal</h3>
+          <p class="pillar-text">Double-domed anti-reflective sapphire crystal offering 9 Mohs diamond-grade scratch resistance.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">🛡️</div>
+          <h3 class="pillar-title">5-Year Warranty</h3>
+          <p class="pillar-text">Every Meer Dada timepiece is backed by our comprehensive international 5-year mechanical assurance.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">👑</div>
+          <h3 class="pillar-title">Hand-Finished Straps</h3>
+          <p class="pillar-text">Louisiana alligator, hand-waxed Italian calfskin, and aerospace-grade vulcanized rubber bracelets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Product Catalog Section
+       ======================================================================== -->
+  <section class="catalog-section" id="catalog">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Master Timepieces</span>
+        <h2 class="section-title">The <span class="gold-text">Meer Dada</span> Collection</h2>
+        <p class="section-subtitle">
+          Explore our signature horological creations, from high-complication tourbillons to deep sea divers and dress chronometers.
+        </p>
+      </div>
+
+      <!-- Controls: Filter Pills & Search & Sort -->
+      <div class="catalog-controls">
+        <div class="filter-pills">
+          <button class="filter-pill active" data-category="All">All Timepieces</button>
+          <button class="filter-pill" data-category="Tourbillon">Tourbillon</button>
+          <button class="filter-pill" data-category="Chronograph">Chronograph</button>
+          <button class="filter-pill" data-category="Skeleton">Skeleton</button>
+          <button class="filter-pill" data-category="Diver">Diver 300M</button>
+          <button class="filter-pill" data-category="Classic Dress">Classic Dress</button>
+        </div>
+
+        <div class="catalog-search-sort">
+          <div class="search-input-wrap">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="catalogSearch" class="search-input" placeholder="Search timepieces...">
+          </div>
+
+          <select id="catalogSort" class="sort-select" aria-label="Sort Timepieces">
+            <option value="featured">Featured First</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Products Dynamic Grid -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Brand Story / Craftsmanship Section
+       ======================================================================== -->
+  <section class="heritage-section" id="heritage">
+    <div class="container">
+      <div class="heritage-grid">
+        <div class="heritage-visual-stack">
+          <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?q=80&w=900&auto=format&fit=crop" 
+               alt="Meer Dada Watchmaker Handcraft" 
+               class="heritage-main-img">
+          <div class="heritage-seal">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            <span class="heritage-seal-text">Geneva Seal Standard</span>
+          </div>
+        </div>
+
+        <div class="heritage-text-content">
+          <span class="section-label">Heritage of Excellence</span>
+          <h3 class="section-title">The Art of <span class="gold-text">Meer Dada</span></h3>
+          <p>
+            Founded on the relentless pursuit of horological perfection, Meer Dada stands at the pinnacle of luxury watchmaking. Each timepiece requires hundreds of hours of painstaking hand-polishing, bevelling, and adjustment.
+          </p>
+          <p>
+            We do not simply tell time; we encapsulate legacy. From our hand-drawn blueprints to our hand-assembled flying tourbillons, every component is scrutinized under 20x magnification to ensure eternal durability.
+          </p>
+          
+          <ul class="heritage-points-list">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Hand-bevelled Côtes de Genève stripes on bridges</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Heat-tempered blued steel screws & escapement gears</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Chronometer grade testing across 5 positions & 3 temperatures</span>
+            </li>
+          </ul>
+
+          <a href="#catalog" class="btn btn-gold-outline btn-magnetic">
+            <span>Discover The Craft</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       VIP Client Reviews
+       ======================================================================== -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Collector Acclaim</span>
+        <h2 class="section-title">Words from <span class="gold-text">Connoisseurs</span></h2>
+        <p class="section-subtitle">Read how our patrons regard the presence and horological finesse of Meer Dada creations.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="quote-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+          </div>
+          <p class="review-text">
+            "The Imperium Tourbillon is breathtaking. The finishing on the rose gold case rivals my Swiss pieces costing three times as much. Meer Dada has set a new benchmark."
+          </p>
+          <div class="reviewer-meta">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Client Avatar" class="reviewer-avatar">
+            <div>
+              <div class="reviewer-name">Sultan Tariq Khan</div>
+              <div class="reviewer-title">Horology Collector, Islamabad</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="quote-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+          </div>
+          <p class="review-text">
+            "I wear the Royal Chronograph daily. The column-wheel pusher action is so crisp, and the blue sunray dial turns heads in every boardroom meeting."
+          </p>
+          <div class="reviewer-meta">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="Client Avatar" class="reviewer-avatar">
+            <div>
+              <div class="reviewer-name">Ahmad Raza Mansoor</div>
+              <div class="reviewer-title">Managing Director, Lahore</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="quote-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+          </div>
+          <p class="review-text">
+            "The Abyss Diver has accompanied me on dives across the Arabian Sea. It feels solid, luminescent in absolute darkness, and extraordinarily luxurious."
+          </p>
+          <div class="reviewer-meta">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Client Avatar" class="reviewer-avatar">
+            <div>
+              <div class="reviewer-name">Bilal Farooq</div>
+              <div class="reviewer-title">Yacht Club Commodore, Karachi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       VIP Concierge / Inner Circle Subscription
+       ======================================================================== -->
+  <section class="concierge-section" id="concierge">
+    <div class="container">
+      <div class="concierge-box">
+        <h3 class="section-title">Join The <span class="gold-text">Meer Dada</span> Inner Circle</h3>
+        <p>
+          Receive private invitations to private horology viewings, limited bespoke releases, and confidential collector dossiers.
+        </p>
+
+        <form class="concierge-form" id="conciergeForm">
+          <input type="email" id="conciergeEmail" class="concierge-input" placeholder="Enter your distinguished email address" required>
+          <button type="submit" class="btn btn-gold-primary">
+            <span>Subscribe</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Footer
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <svg class="brand-icon-crown" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+            </svg>
+            <div class="brand-text">
+              <span class="brand-name">MEER DADA</span>
+              <span class="brand-tagline">Haute Horlogerie</span>
+            </div>
+          </div>
+          <p class="footer-brand-desc">
+            Master watchmaking crafted with timeless passion. Designed for connoisseurs of distinction, precision, and architectural elegance.
+          </p>
+          <div class="footer-social-links">
+            <a href="#" class="social-pill-btn" aria-label="Instagram">IG</a>
+            <a href="#" class="social-pill-btn" aria-label="Facebook">FB</a>
+            <a href="#" class="social-pill-btn" aria-label="LinkedIn">IN</a>
+            <a href="#" class="social-pill-btn" aria-label="YouTube">YT</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Collections</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="#catalog">Tourbillon Series</a></li>
+            <li class="footer-link-item"><a href="#catalog">Royal Chronographs</a></li>
+            <li class="footer-link-item"><a href="#catalog">Nocturne Skeleton</a></li>
+            <li class="footer-link-item"><a href="#catalog">Abyss Diver 300M</a></li>
+            <li class="footer-link-item"><a href="#catalog">Grand Classique</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Client Services</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="admin.html">Admin Dashboard</a></li>
+            <li class="footer-link-item"><a href="#heritage">5-Year Warranty</a></li>
+            <li class="footer-link-item"><a href="#concierge">VIP White-Glove Delivery</a></li>
+            <li class="footer-link-item"><a href="#hero">Bespoke Custom Orders</a></li>
+            <li class="footer-link-item"><a href="#concierge">Authentication Certificate</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Horlogerie Salons</h4>
+          <p style="color:var(--text-dim); font-size:0.85rem; line-height: 1.7; margin-bottom: 0.8rem;">
+            <strong>Salons:</strong> Blue Area, Islamabad · Gulberg III, Lahore · Clifton Block 4, Karachi
+          </p>
+          <p style="color:var(--text-dim); font-size:0.85rem;">
+            <strong>Private Concierge:</strong> +92 300 8472910<br>
+            <strong>Inquiries:</strong> concierge@meerdada.com
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 Meer Dada Haute Horlogerie. All rights reserved.</div>
+        <div style="display:flex; gap: 1.5rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Distinction</a>
+          <a href="admin.html" style="color:var(--gold-light);">Admin Console &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       Shopping Cart Slide-Over Drawer
+       ======================================================================== -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title brand-font">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span>Your Private Box</span>
+      </h3>
+      <button class="modal-close-btn" id="closeCartBtn" aria-label="Close cart">&times;</button>
+    </div>
+
+    <!-- Cart items list container -->
+    <div class="cart-items-list" id="cartItemsList">
+      <!-- Populated via js/app.js -->
+    </div>
+
+    <!-- Promo code input -->
+    <div style="padding: 0 1.8rem 1rem 1.8rem;">
+      <div style="display: flex; gap: 0.5rem;">
+        <input type="text" id="promoCodeInput" placeholder="VIP Code (e.g. MEER10)" style="flex-grow:1; background:rgba(0,0,0,0.5); border:1px solid var(--border-subtle); border-radius:20px; padding:0.5rem 1rem; color:#fff; font-size:0.8rem; text-transform:uppercase;">
+        <button id="applyPromoBtn" class="btn btn-gold-outline btn-sm">Apply</button>
+      </div>
+    </div>
+
+    <!-- Cart Drawer Footer -->
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal:</span>
+        <span id="cartSubtotal">₨ 0</span>
+      </div>
+      <div class="cart-subtotal-row">
+        <span>VIP Concession:</span>
+        <span id="cartDiscount" style="color:var(--success);">₨ 0</span>
+      </div>
+      <div class="cart-total-row">
+        <span>Payable Total:</span>
+        <span class="cart-total-amount" id="cartTotal">₨ 0</span>
+      </div>
+
+      <button class="btn btn-gold-primary btn-block btn-lg" id="proceedToCheckoutBtn">
+        <span>Secure Acquisition</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </button>
+
+      <button class="btn btn-gold-outline btn-block btn-sm" id="continueShoppingBtn" style="margin-top: 0.6rem;">
+        Continue Exploring
+      </button>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       Modals: Quick View, Checkout, Order Success
+       ======================================================================== -->
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+
+  <!-- 1. Quick View Modal -->
+  <div class="modal-window" id="quickViewModal">
+    <button class="modal-close-btn close-modal-trigger">&times;</button>
+    <div id="quickViewModalBody">
+      <!-- Populated via js/app.js -->
+    </div>
+  </div>
+
+  <!-- 2. Checkout Modal -->
+  <div class="modal-window" id="checkoutModal">
+    <button class="modal-close-btn close-modal-trigger">&times;</button>
+    <div class="checkout-form-container">
+      <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+        <span class="section-label">Acquisition Protocol</span>
+        <h2 style="font-family: var(--font-serif); font-size: 1.8rem; color: #fff;">Acquire Meer Dada Timepiece</h2>
+        <div id="checkoutSummaryText" style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.4rem;"></div>
+      </div>
+
+      <form id="checkoutForm">
+        <div class="form-group-grid">
+          <div class="form-field">
+            <label for="custName">Distinguished Name *</label>
+            <input type="text" id="custName" required placeholder="e.g. Sultan Tariq Khan">
+          </div>
+          <div class="form-field">
+            <label for="custPhone">Direct Phone *</label>
+            <input type="tel" id="custPhone" required placeholder="e.g. +92 300 1234567">
+          </div>
+        </div>
+
+        <div class="form-group-grid">
+          <div class="form-field">
+            <label for="custEmail">Private Email *</label>
+            <input type="email" id="custEmail" required placeholder="e.g. tariq@luxury.pk">
+          </div>
+          <div class="form-field">
+            <label for="custCity">Destination City *</label>
+            <input type="text" id="custCity" required placeholder="e.g. Islamabad, Lahore, Karachi">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="custAddress">Full Residence / Office Delivery Address *</label>
+          <input type="text" id="custAddress" required placeholder="Street address, Sector, DHA Phase / Villa number">
+        </div>
+
+        <div class="form-group-grid">
+          <div class="form-field">
+            <label for="custPayment">Preferred Payment Method</label>
+            <select id="custPayment">
+              <option value="Cash on Delivery (White Glove Hand Delivery)">Cash on Delivery (White Glove Hand Delivery)</option>
+              <option value="Direct Bank Wire / VIP Concierge">Direct Bank Wire / VIP Concierge</option>
+              <option value="Credit / Debit Card (Secure Processing)">Credit / Debit Card (Secure Processing)</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="custNotes">Special Horology Notes</label>
+            <input type="text" id="custNotes" placeholder="e.g. Gift wrapping with personalized seal">
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <button type="submit" class="btn btn-gold-primary btn-block btn-lg">
+            <span>Confirm Acquisition & Order</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. Order Success Modal -->
+  <div class="modal-window" id="successModal">
+    <button class="modal-close-btn close-modal-trigger">&times;</button>
+    <div class="success-modal-content">
+      <div class="success-icon-badge">✓</div>
+      <h2 style="font-family: var(--font-serif); font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">
+        Acquisition Registered
+      </h2>
+      
+      <div id="successOrderDetails">
+        <!-- Filled dynamically -->
+      </div>
+
+      <div style="display:flex; justify-content:center; gap:1rem; margin-top:2rem;">
+        <button class="btn btn-gold-outline" onclick="closeAllModals()">
+          Return to Storefront
+        </button>
+        <a href="admin.html" class="btn btn-gold-primary">
+          View in Admin Panel &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       Floating Shortcut Button to Admin Panel
+       ======================================================================== -->
+  <a href="admin.html" class="floating-admin-launcher" title="Open Meer Dada Admin Dashboard">
+    <span class="live-beacon"></span>
+    <span>Admin Panel</span>
+  </a>
+
+  <!-- JavaScript Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
